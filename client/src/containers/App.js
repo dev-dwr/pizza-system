@@ -7,7 +7,6 @@ const testFetch = () => {
       console.log(res);
     })
 }
-
 function App() {
   useEffect(() => {
     testFetch();
