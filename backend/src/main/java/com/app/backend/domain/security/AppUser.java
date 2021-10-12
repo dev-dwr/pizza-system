@@ -30,6 +30,7 @@ public class AppUser implements UserDetails {
 
     private Boolean locked = false;
     private Boolean enabled = false;
+    private Boolean loggedIn = false;
 
 
     public AppUser(String firstname, String lastname, String email, String password, AppUserRole appUserRole) {
@@ -129,6 +130,14 @@ public class AppUser implements UserDetails {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Boolean getLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(Boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 
     @Override

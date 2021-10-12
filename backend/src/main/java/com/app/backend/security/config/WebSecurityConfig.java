@@ -22,19 +22,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.exceptionHandling()
-                .authenticationEntryPoint(restAuthenticationEntryPoint).and()
-                .authorizeRequests((request) -> request.antMatchers("/api/v*/**").permitAll()
-                        .antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest().authenticated())
-                .formLogin().loginProcessingUrl("/login");
-//                .and()
-//                .logout()
-//                .logoutUrl("/logout")
-//                .clearAuthentication(true)
-//                .invalidateHttpSession(true)
-//                .logoutSuccessUrl("/login");
 
-        http.csrf().disable().cors().and().headers().frameOptions().disable();
+            http.exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint).and()
+                    .authorizeRequests()
+                    .antMatchers("/**/*.{js,html,css}").permitAll()
+                    .antMatchers("/", "/api/v*/**").permitAll()
+                    .anyRequest().authenticated();
+
+
+       http.csrf().disable().cors().and().headers().frameOptions().disable();
     }
 
     @Override

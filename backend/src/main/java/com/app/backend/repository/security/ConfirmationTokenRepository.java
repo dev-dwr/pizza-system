@@ -1,5 +1,6 @@
 package com.app.backend.repository.security;
 
+import com.app.backend.domain.security.AppUser;
 import com.app.backend.domain.security.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -12,6 +13,7 @@ import java.util.Optional;
 public interface ConfirmationTokenRepository extends JpaRepository<ConfirmationToken, Long> {
 
     Optional<ConfirmationToken> findByToken(String token);
+    ConfirmationToken findConfirmationTokenByAppUser(AppUser user);
 
     @Transactional
     @Modifying
