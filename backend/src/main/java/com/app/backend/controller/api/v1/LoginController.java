@@ -1,12 +1,10 @@
 package com.app.backend.controller.api.v1;
 
-import com.app.backend.domain.security.AppUser;
 import com.app.backend.domain.security.TokenRequest;
-import com.app.backend.login.LoginRequest;
-import com.app.backend.login.LoginResponse;
+import com.app.backend.authentication.LoginRequest;
+import com.app.backend.authentication.LoginResponse;
 import com.app.backend.service.security.LoginService;
 import lombok.AllArgsConstructor;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

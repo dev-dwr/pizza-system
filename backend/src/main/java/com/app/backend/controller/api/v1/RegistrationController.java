@@ -1,7 +1,7 @@
 package com.app.backend.controller.api.v1;
 
 
-import com.app.backend.registration.RegistrationRequest;
+import com.app.backend.authentication.RegistrationRequest;
 import com.app.backend.service.security.RegistrationService;
 import org.springframework.web.bind.annotation.*;
 

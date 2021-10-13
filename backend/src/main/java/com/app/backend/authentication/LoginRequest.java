@@ -1,4 +1,4 @@
-package com.app.backend.login;
+package com.app.backend.authentication;
 
 public class LoginRequest {
     private final String password;

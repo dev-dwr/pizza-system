@@ -1,4 +1,4 @@
-package com.app.backend.login;
+package com.app.backend.authentication;
 
 public class LoginResponse {
     private boolean isLoggedIn;

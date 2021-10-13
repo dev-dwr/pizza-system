@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useState} from "react";
-import { Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import { useHistory } from 'react-router';
 
 
@@ -46,7 +46,9 @@ const Login = () => {
                        name="password" required/>
                 <button type="submit">Submit</button>
             </form>
-
+            <Link to ="/registration">
+               registration
+            </Link>
         </div>
     );
 }

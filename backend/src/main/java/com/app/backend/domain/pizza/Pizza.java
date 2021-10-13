@@ -23,6 +23,8 @@ public class Pizza {
     @ElementCollection(targetClass = Ingredients.class)
     private List<Ingredients> ingredientsList;
 
+    private float price = 0;
+
     public Pizza() {
     }
 
@@ -33,6 +35,7 @@ public class Pizza {
         this.size = size;
         this.ingredientsList = ingredientsList;
     }
+
 
     public String getName() {
         return name;
@@ -72,6 +75,14 @@ public class Pizza {
 
     public void setIngredientsList(List<Ingredients> ingredientsList) {
         this.ingredientsList = ingredientsList;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     @Override

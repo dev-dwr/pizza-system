@@ -1,6 +1,4 @@
-package com.app.backend.registration;
-
-import lombok.AllArgsConstructor;
+package com.app.backend.authentication;
 
 import java.util.Objects;
 

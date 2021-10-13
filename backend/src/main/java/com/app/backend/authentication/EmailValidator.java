@@ -1,4 +1,4 @@
-package com.app.backend.registration;
+package com.app.backend.authentication;
 
 import org.springframework.stereotype.Service;
 
