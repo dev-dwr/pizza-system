@@ -17,7 +17,7 @@ public class PizzaController {
     private final PizzaService pizzaService;
 
     @PostMapping("/pizza/create")
-    public String createPizza(@RequestBody Pizza pizza){
+    public Pizza createPizza(@RequestBody Pizza pizza){
         return pizzaService.createPizza(pizza);
     }
 

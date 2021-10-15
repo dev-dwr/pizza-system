@@ -1,5 +1,7 @@
 package com.app.backend.domain.pizza;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.util.List;
 

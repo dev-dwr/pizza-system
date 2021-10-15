@@ -33,14 +33,5 @@ public class LoginController {
         return "logged out";
     }
 
-//    @PostMapping("/checkIfUserIsLoggedIn")
-//    public String checkIfUserIsLoggedIn(TokenRequest token){
-//        boolean isUserLoggedIn = loginService.checkIfUserIsLoggedIn(token);
-//        if(isUserLoggedIn){
-//            return "user is logged in";
-//        }
-//        return "user is not logged in";
-//    }
-
 }
 
