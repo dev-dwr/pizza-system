@@ -44,7 +44,7 @@ const Main = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8080/api/v1/create", data).then(res => {
+        axios.post("http://localhost:8080/api/v1/pizza/create", data).then(res => {
             console.log(res);
         })
     }

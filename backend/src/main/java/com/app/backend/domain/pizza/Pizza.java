@@ -23,7 +23,7 @@ public class Pizza {
     @ElementCollection(targetClass = Ingredients.class)
     private List<Ingredients> ingredientsList;
 
-    private float price = 0;
+    private int price = 0;
 
     public Pizza() {
     }
@@ -77,11 +77,19 @@ public class Pizza {
         this.ingredientsList = ingredientsList;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -95,4 +103,5 @@ public class Pizza {
                 ", ingredientsList=" + ingredientsList +
                 '}';
     }
+
 }
