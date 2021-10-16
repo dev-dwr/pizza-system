@@ -30,4 +30,9 @@ public class PizzaController {
     public PizzaDto getPizzaById(@PathVariable Long id){
         return pizzaService.findPizzaById(id);
     }
+
+    @DeleteMapping("/pizza/delete/{id}")
+    public void deletePizzaById(@PathVariable Long id){
+        pizzaService.deletePizzaById(id);
+    }
 }

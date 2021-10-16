@@ -2,6 +2,7 @@ package com.app.backend.service;
 
 import com.app.backend.domain.dto.PizzaDto;
 import com.app.backend.domain.pizza.Pizza;
+import com.app.backend.domain.pizza.PizzaBuilder;
 import com.app.backend.exceptions.NotFoundException;
 import com.app.backend.mapper.PizzaMapper;
 import com.app.backend.repository.PizzaRepository;
@@ -53,4 +54,7 @@ public class PizzaService {
         return pizzaDto;
     }
 
+    public void deletePizzaById(Long id) {
+        pizzaRepository.deleteById(id);
+    }
 }
