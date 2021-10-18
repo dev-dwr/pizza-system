@@ -28,6 +28,7 @@ public class PizzaBootstrap implements ApplicationListener<ContextRefreshedEvent
                 .withSauce("TOMATO")
                 .withSize("LARGE")
                 .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("TOMATO"))
                 .withIngredient(Ingredients.valueOf("BACON"))
                 .build();
         pizzaRepository.save(pizza1);
@@ -41,5 +42,102 @@ public class PizzaBootstrap implements ApplicationListener<ContextRefreshedEvent
                 .withIngredient(Ingredients.valueOf("BACON"))
                 .build();
         pizzaRepository.save(pizza2);
+
+        var pizza3 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("third pizza")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza3);
+
+        var pizza4 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("fourth pizza")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .build();
+        pizzaRepository.save(pizza4);
+
+        var pizza5 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("best pizza")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza5);
+
+        var pizza6 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("meat pizza")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza6);
+
+        var pizza7 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("pizzaaaaa")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza7);
+
+        var pizza8 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("mock data")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza8);
+
+        var pizza9 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("test")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza9);
+
+        var pizza10 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("test1223")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza10);
+
+        var pizza11 = new PizzaBuilder()
+                .withDough("POLISH")
+                .withName("mock data 234")
+                .withSauce("CHEESE")
+                .withSize("SMALL")
+                .withIngredient(Ingredients.valueOf("HAM"))
+                .withIngredient(Ingredients.valueOf("MUSHROOMS"))
+                .withIngredient(Ingredients.valueOf("BACON"))
+                .build();
+        pizzaRepository.save(pizza11);
     }
 }

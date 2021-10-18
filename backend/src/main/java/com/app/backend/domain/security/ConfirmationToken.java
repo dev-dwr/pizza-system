@@ -23,7 +23,6 @@ public class ConfirmationToken {
     @JoinColumn(nullable = false, name = "app_user_id")
     private AppUser appUser;
 
-    private boolean isLoggedIn = false;
 
     private LocalDateTime confirmedAt;
 
