@@ -53,8 +53,6 @@ public class AppUserService implements UserDetailsService {
         repository.save(appUser);
 
 
-
-
         ConfirmationToken confirmationToken = new ConfirmationToken(
                 token, LocalDateTime.now(), LocalDateTime.now().plusMinutes(15), appUser);
 

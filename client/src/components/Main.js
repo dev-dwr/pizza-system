@@ -31,11 +31,10 @@ const Main = () => {
 
     const onLogout = () => {
         axios.post("http://localhost:8080/api/v1/logout", token).then(res => {
-            if (res.status === 200) {
-                localStorage.removeItem("logged_in");
-                localStorage.removeItem("token");
+            console.log(res)
+            localStorage.removeItem("logged_in");
+            localStorage.removeItem("token");
 
-            }
         }).then(() => {
             routerHistory.push("/login");
         })
@@ -81,7 +80,7 @@ const Main = () => {
                 <aside className="col-sm-4">
                     <div className="card">
                         <article className="card-body">
-                            <a onClick={onLogout} href="/login"
+                            <a onClick={onLogout}
                                className="float-right btn btn-outline-primary">Logout</a>
                             <h4 className="card-title mb-4 mt-1">Create Your Pizza</h4>
                             <form onSubmit={handleFormSubmit}>
@@ -151,7 +150,7 @@ const Main = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <Link to ="/all">
+                                    <Link to="/all">
                                         <p>Show Orders</p>
                                     </Link>
 

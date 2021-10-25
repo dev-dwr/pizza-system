@@ -16,7 +16,6 @@ import javax.mail.internet.MimeMessage;
 public class EmailSenderImpl implements EmailSender {
     private final JavaMailSender mailSender;
 
-    //execute in a separate thread
     @Async
     @Override
     public void send(String to, String email) {
