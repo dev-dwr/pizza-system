@@ -28,14 +28,13 @@ public class PizzaBuilder {
         return this;
     }
 
-
     public PizzaBuilder withDough(String doughValue) {
         this.dough = Dough.valueOf(doughValue.isBlank() ? "ITALIAN" : doughValue);
         return this;
     }
 
-    public PizzaBuilder withIngredient(Ingredients ingredient) {
-        ingredientsList.add(ingredient);
+    public PizzaBuilder withIngredients(List<Ingredients> ingredients) {
+        this.ingredientsList = ingredients;
         return this;
     }
     public Pizza build(){

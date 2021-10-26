@@ -56,8 +56,7 @@ class PizzaControllerTest {
                 .withName("under test")
                 .withSauce("TOMATO")
                 .withSize("LARGE")
-                .withIngredient(Ingredients.valueOf("HAM"))
-                .withIngredient(Ingredients.valueOf("BACON"))
+                .withIngredients(List.of(Ingredients.valueOf("HAM"), Ingredients.valueOf("BACON")))
                 .build();
 
         MockHttpServletResponse response = mockMvc.perform(

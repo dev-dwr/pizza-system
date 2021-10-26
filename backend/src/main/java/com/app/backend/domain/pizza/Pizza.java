@@ -38,6 +38,9 @@ public class Pizza {
         this.ingredientsList = ingredientsList;
     }
 
+    public static PizzaBuilder builder(){
+        return new PizzaBuilder();
+    }
 
     public String getName() {
         return name;

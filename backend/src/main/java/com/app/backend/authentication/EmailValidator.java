@@ -6,7 +6,6 @@ import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//Evaluates this predicate on the given argument
 @Service
 public class EmailValidator implements Predicate<String> {
 

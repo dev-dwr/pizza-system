@@ -30,15 +30,15 @@ public class PizzaService {
 
         pizzaRepository.save(createdPizza);
 
-        Pizza wantedPizza = pizzaRepository.findPizzaByName(createdPizza.getName()).orElseThrow(() -> new NotFoundException());
+        Pizza neededPizzaForPriceUpdate = pizzaRepository.findPizzaByName(createdPizza.getName())
+                .orElseThrow(() -> new NotFoundException());
 
         int price = priceCalculator.calculatePrice(createdPizza);
 
-        pizzaRepository.updatePizzaPrice(price, wantedPizza.getId());
+        pizzaRepository.updatePizzaPrice(price, neededPizzaForPriceUpdate.getId());
 
 
-        System.out.println(createdPizza.getPrice());
-        return wantedPizza;
+        return neededPizzaForPriceUpdate;
 
     }
 
@@ -48,10 +48,10 @@ public class PizzaService {
     }
 
     public PizzaDto findPizzaById(Long id) {
-        Pizza wantedPizza =  pizzaRepository.findById(id)
+        Pizza wantedPizza = pizzaRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException());
-        PizzaDto pizzaDto = mapper.pizzaToPizzaDto(wantedPizza);
-        return pizzaDto;
+
+        return mapper.pizzaToPizzaDto(wantedPizza);
     }
 
     public void deletePizzaById(Long id) {
