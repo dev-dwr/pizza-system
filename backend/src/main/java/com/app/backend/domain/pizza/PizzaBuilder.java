@@ -5,7 +5,6 @@ import java.util.List;
 
 
 public class PizzaBuilder {
-    private Long id;
     private String pizzaName;
     private Size size;
     private Sauce sauce;

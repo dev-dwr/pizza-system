@@ -7,8 +7,8 @@ import java.util.List;
 public class PriceCalculatorUtil {
     public static double getMeatIngredientPercentage(List<Ingredients> ingredients){
         long count = ingredients.stream()
-                .filter(ingredient -> ingredient.isMeat())
+                .filter(Ingredients::isMeat)
                 .count();
-        return ((double) count / (double) ingredients.size()) * 100;
+        return ((double) count / ingredients.size()) * 100;
     }
 }

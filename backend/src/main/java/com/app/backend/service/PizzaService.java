@@ -2,7 +2,6 @@ package com.app.backend.service;
 
 import com.app.backend.domain.dto.PizzaDto;
 import com.app.backend.domain.pizza.Pizza;
-import com.app.backend.domain.pizza.PizzaBuilder;
 import com.app.backend.exceptions.NotFoundException;
 import com.app.backend.mapper.PizzaMapper;
 import com.app.backend.repository.PizzaRepository;
@@ -31,7 +30,7 @@ public class PizzaService {
         pizzaRepository.save(createdPizza);
 
         Pizza neededPizzaForPriceUpdate = pizzaRepository.findPizzaByName(createdPizza.getName())
-                .orElseThrow(() -> new NotFoundException());
+                .orElseThrow(NotFoundException::new);
 
         int price = priceCalculator.calculatePrice(createdPizza);
 
@@ -43,13 +42,12 @@ public class PizzaService {
     }
 
     public List<PizzaDto> findAllPizza() {
-        List<PizzaDto> pizzaDtos = pizzaRepository.findAll().stream().map(pizza -> mapper.pizzaToPizzaDto(pizza)).collect(Collectors.toList());
-        return pizzaDtos;
+        return pizzaRepository.findAll().stream().map(mapper::pizzaToPizzaDto).collect(Collectors.toList());
     }
 
     public PizzaDto findPizzaById(Long id) {
         Pizza wantedPizza = pizzaRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException());
+                .orElseThrow(NotFoundException::new);
 
         return mapper.pizzaToPizzaDto(wantedPizza);
     }

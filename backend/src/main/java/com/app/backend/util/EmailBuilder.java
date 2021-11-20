@@ -16,14 +16,15 @@ public class EmailBuilder {
             Resource resource = new ClassPathResource("static/registration.html");
             InputStream inputStream = resource.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String s = "";
+            StringBuilder builder = new StringBuilder();
             String line;
             while((line = bufferedReader.readLine()) != null){
-                s+= line;
+                builder.append(line);
             }
-            s = s.replaceFirst("%NAME%", name);
-            s = s.replaceFirst("%LINK%", link);
-            return s;
+            String builderToString = builder.toString();
+            builderToString = builderToString.replaceFirst("%NAME%", name);
+            builderToString = builderToString.replaceFirst("%LINK%", link);
+            return builderToString;
         } catch (IOException io) {
             System.out.println(io.getMessage());
             return "cannot send email";

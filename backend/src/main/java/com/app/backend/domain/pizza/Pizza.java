@@ -1,11 +1,15 @@
 package com.app.backend.domain.pizza;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Pizza {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pizza_generator")
@@ -25,10 +29,7 @@ public class Pizza {
     @ElementCollection(targetClass = Ingredients.class)
     private List<Ingredients> ingredientsList;
 
-    private int price = 0;
-
-    public Pizza() {
-    }
+    private int price;
 
     public Pizza(String name, Dough dough, Sauce sauce, Size size, List<Ingredients> ingredientsList) {
         this.name = name;
@@ -42,71 +43,5 @@ public class Pizza {
         return new PizzaBuilder();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Dough getDough() {
-        return dough;
-    }
-
-    public Sauce getSauce() {
-        return sauce;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public List<Ingredients> getIngredientsList() {
-        return ingredientsList;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDough(Dough dough) {
-        this.dough = dough;
-    }
-
-    public void setSauce(Sauce sauce) {
-        this.sauce = sauce;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
-    }
-
-    public void setIngredientsList(List<Ingredients> ingredientsList) {
-        this.ingredientsList = ingredientsList;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Pizza{" +
-                "name='" + name + '\'' +
-                ", dough=" + dough +
-                ", sauce=" + sauce +
-                ", size=" + size +
-                ", ingredientsList=" + ingredientsList +
-                '}';
-    }
 
 }

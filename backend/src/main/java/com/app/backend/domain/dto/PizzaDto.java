@@ -6,12 +6,13 @@ import com.app.backend.domain.pizza.Sauce;
 import com.app.backend.domain.pizza.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 public class PizzaDto {
     private Long id;
@@ -19,6 +20,7 @@ public class PizzaDto {
     private Dough dough;
     private Sauce sauce;
     private Size size;
-    private int price = 0;
+    private int price;
     private List<Ingredients> ingredientsList;
+
 }

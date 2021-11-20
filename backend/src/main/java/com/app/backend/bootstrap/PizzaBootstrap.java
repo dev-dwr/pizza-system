@@ -20,6 +20,7 @@ public class PizzaBootstrap implements ApplicationListener<ContextRefreshedEvent
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
+        //it is better to use flyway migrations?
         loadPizza();
     }
 

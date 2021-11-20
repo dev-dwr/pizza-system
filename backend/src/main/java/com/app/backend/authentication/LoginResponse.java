@@ -1,30 +1,15 @@
 package com.app.backend.authentication;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginResponse {
     private boolean isLoggedIn;
     private String token;
-
-    public LoginResponse(boolean isLoggedIn, String token) {
-        this.isLoggedIn = isLoggedIn;
-        this.token = token;
-    }
-
-    public LoginResponse() {
-    }
-
-    public boolean isLoggedIn() {
-        return isLoggedIn;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setLoggedIn(boolean loggedIn) {
-        isLoggedIn = loggedIn;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

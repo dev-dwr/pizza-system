@@ -16,9 +16,7 @@ public class PriceCalculator {
 
         PizzaPriceCalculator pizzaPriceCalculator = obtainDecorator(size);
 
-        int price = pizzaPriceCalculator.calculate(pizza);
-
-        return price;
+        return pizzaPriceCalculator.calculate(pizza);
     }
 
 
